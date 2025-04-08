@@ -1,9 +1,9 @@
 # PIC16F877A
 
-* code - MPLAB XIDE
+* code - MPLABPX IDE
 * simulation - proteus 8 professional
 
-## MPLAB Setting
+#### MPLAB Setting
  * Download and install
  * Step 1 : Open MPLAB -> File -> New Project ->(New Tab opens) Device : PIC16F877A -> TOOL : Simulator -> FINISH
  * Step 2 :(Side bar click on project name) -> source file(RIGHT CLICK) -> NEW -> main.c
