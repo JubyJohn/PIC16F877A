@@ -48,14 +48,55 @@ void main(void)
         
        if(PORTB & 0x01)
         {
-            PORTC &= ~(0X01);
+            PORTC |= 0X01;
         }
         else
         {
-            PORTC |= 0X01;
+            PORTC &= ~(0X01);
         }
       
     }
     return;
 }
 
+----------------*******SWITCH WITH MOTOR*******----------
+#pragma config FOSC = HS        // Oscillator Selection bits (HS oscillator)
+#pragma config WDTE = ON        // Watchdog Timer Enable bit (WDT enabled)
+#pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
+#pragma config BOREN = ON       // Brown-out Reset Enable bit (BOR enabled)
+#pragma config LVP = ON         // Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit (RB3/PGM pin has PGM function; low-voltage programming enabled)
+#pragma config CPD = OFF        // Data EEPROM Memory Code Protection bit (Data EEPROM code protection off)
+#pragma config WRT = OFF        // Flash Program Memory Write Enable bits (Write protection off; all program memory may be written to by EECON control)
+#pragma config CP = OFF         // Flash Program Memory Code Protection bit (Code protection off)
+
+#include <xc.h>
+#define _XTAL_FREQ 16000000
+
+void main(void) 
+{ 
+    PORTD = 0xF0;
+    TRISD = 0xF0;
+    
+    while(1)
+    {
+        
+        if(PORTD & 0x10) // 1111 0000
+        {
+            PORTD |= 0X0A; // 0000 1010~ FORWARD
+        }
+        else if(PORTD & 0x20) 
+        {
+             PORTD |= 0X05;  // 0000 0101~BACKWARD
+        }
+        else if(PORTD & 0x40)  
+        {
+             PORTD |= 0X08; //0000 1000~LEFT
+        }
+        else if(PORTD & 0x80) 
+        {
+             PORTD |= 0X02; // 0000 0010~RIGHT
+        }
+      
+    }
+    return;
+}
