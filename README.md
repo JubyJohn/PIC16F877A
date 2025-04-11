@@ -17,6 +17,19 @@
 |TIMER1|	16-bit|	T1CON|	TMR1H,TMR1L|	0.2usec	|104.857ms|
 |TIMER2|	8-bit|	T2CON	|TMR2|	0.2usec	|819usec|
 
+Time to increment the Timer count by one(timer tick):
+<br> tick = (Prescalar/(Fosc/4)  Fosc=16MHz
+<br> Here, Timer0 is 8 bit hence time period to complete 0 to 255 is consider as delay 
+<br> i.e, delay = Count * tick
+<br> Count = (Delay/tick)
+<br> RegValue = TimerMax- Count
+<br> RegValue = TimerMax-(Delay/tick) = TimerMax - (Delay/((Prescalar *4)/Fosc))
+
+|Timer|	Size|	Formula for delay calculation|
+|:---:|:--:|:---:|
+|TIMER0	|8-bit|	RegValue = 256-((Delay * Fosc)/(Prescalar*4))|
+TIMER1 |16-bit|	RegValue = 65536-((Delay * Fosc)/(Prescalar*4))|
+TIMER2	|8-bit	|RegValue = 256-((Delay * Fosc)/(Prescalar*4))|
 
 #### PULSE WIDTH MODULATION
 
