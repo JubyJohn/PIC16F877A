@@ -9,6 +9,7 @@
  * Step 2 :(Side bar click on project name) -> source file(RIGHT CLICK) -> NEW -> main.c
  * Step 3 : (Menu bar) Production -> set configuration bits -> change FOSC's EXTRC to HS -> generate configuration bits (copy config definition to main.c file)
 
+#### PULSE WIDTH MODULATION
 
 |PWM Channel|	Port Pin|	Control Register|	Duty Cycle Register	|Period Register|
 |:---:|:--:|:---:|:--:|:--:|
