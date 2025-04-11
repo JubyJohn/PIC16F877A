@@ -37,8 +37,14 @@ Time to increment the Timer count by one(timer tick):
 TIMER1 |16-bit|	RegValue = 65536-((Delay * Fosc)/(Prescalar*4))|
 TIMER2	|8-bit	|RegValue = 256-((Delay * Fosc)/(Prescalar*4))|
 
-
-Refer to https://exploreembedded.com/wiki/PIC16f877a_Timer
+* Calculate the Timer Count for the required delay.
+* Set the Presaclar bits in OPTION_REG as per the delay calculations.
+* Clear the PSAbit for using the prescalar.
+* Select the Clock Source Internal/External using TOCS bit.
+* Load the timer value into TMRO register.
+* Enable the Timer0 Interrupt by setting TMR0IE bit
+* Enable the Global and Peripheral interrupts by setting GIE and PIE bits
+* Refer to https://exploreembedded.com/wiki/PIC16f877a_Timer
 
 #### PULSE WIDTH MODULATION
 
