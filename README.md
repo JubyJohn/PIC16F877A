@@ -18,7 +18,7 @@
 |TIMER2|	8-bit|	T2CON	|TMR2|	0.2usec	|819usec|
 
 
-
+##### TIMER 0 
 
 Time to increment the Timer count by one(timer tick):
 <br> tick = (Prescalar/(Fosc/4)  Fosc=16MHz
@@ -45,6 +45,15 @@ TIMER2	|8-bit	|RegValue = 256-((Delay * Fosc)/(Prescalar*4))|
 * Enable the Timer0 Interrupt by setting TMR0IE bit
 * Enable the Global and Peripheral interrupts by setting GIE and PIE bits
 * Refer to https://exploreembedded.com/wiki/PIC16f877a_Timer
+
+
+##### TIMER 1
+
+ |CCP Mode | Timer Resource| 
+ |:--:|:---:|
+|Capture|	Timer1|
+|Compare	|Timer1|
+|PWM	|Timer2|
 
 #### PULSE WIDTH MODULATION
 
