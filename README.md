@@ -12,7 +12,7 @@
 #### TIMERS & INTERRUPTS
 
 |Timer	|Size	|Control Register	|Count Register|	Min Delay|	Max Delay|
-|:---:|:--:|:---:|:--:|:--:|
+|:---:|:--:|:---:|:--:|:--:|:---:|
 |TIMER0|	8-bit|OPTION_REG|	TMR0	|0.2usec	|13.107ms|
 |TIMER1|	16-bit|	T1CON|	TMR1H,TMR1L|	0.2usec	|104.857ms|
 |TIMER2|	8-bit|	T2CON	|TMR2|	0.2usec	|819usec|
