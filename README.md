@@ -72,3 +72,8 @@ TIMER2	|8-bit	|RegValue = 256-((Delay * Fosc)/(Prescalar*4))|
 * Two types for IRQ pins.
         (1) RB0 INT (edge-triggered)
         (2) PORTB IOC (interrupt-on-change)
+* The registers which control the interrupt circuitry are the following 5-Registers
+
+|INTCON|	PIE1|	PIE2|	PIR1|	PIR2|
+|:---:|:---:|:--:|:--:|:---:|
+
