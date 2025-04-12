@@ -2,6 +2,7 @@
 
 * code - MPLABPX IDE
 * simulation - proteus 8 professional
+* Datasheet - https://ww1.microchip.com/downloads/en/devicedoc/39582b.pdf
 
 #### MPLAB Setting
  * Download and install
