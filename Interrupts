@@ -1,0 +1,47 @@
+
+To create a laggy routine of an LED that’s blinking once/2sec with __delay_ms() macro. And Configure another LED output pin in order to toggle upon each rising edge on the RB0 IRQ pin.
+
+// CONFIG
+#pragma config FOSC = HS        // Oscillator Selection bits (HS oscillator)
+#pragma config WDTE = ON        // Watchdog Timer Enable bit (WDT enabled)
+#pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
+#pragma config BOREN = ON       // Brown-out Reset Enable bit (BOR enabled)
+#pragma config LVP = ON         // Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit (RB3/PGM pin has PGM function; low-voltage programming enabled)
+#pragma config CPD = OFF        // Data EEPROM Memory Code Protection bit (Data EEPROM code protection off)
+#pragma config WRT = OFF        // Flash Program Memory Write Enable bits (Write protection off; all program memory may be written to by EECON control)
+#pragma config CP = OFF         // Flash Program Memory Code Protection bit (Code protection off)
+
+
+#include <xc.h>
+#define _XTAL_FREQ 16000000
+
+void main(void)
+{
+  //--[ Configure The IO pins ]--
+  TRISC1 = 0;
+  TRISC2 = 0;
+ 
+  //--[ Configure The RB0 IRQ Interrupt ]--
+  INTEDG = 0;
+  INTE = 1;
+  GIE = 1;
+ 
+  // Create The Main loop
+  while(1)
+  {
+    // Green LED Blinking Routine
+    RC2 = 1;
+    __delay_ms(1000);
+    RC2 = 0;
+    __delay_ms(1000);
+  }
+}
+void __interrupt() ISR(void)
+{
+  if (INTF == 1)   // Check The Flag
+  {
+    //  Toggle The Yellow LED
+    RC1 = ~RC1;
+    INTF = 0;  //  Clear The Flag
+  }
+}
