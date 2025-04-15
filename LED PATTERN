@@ -1,7 +1,7 @@
 
---------------------****LED ON/OFF on desired pin*****-----------
+--------------------**************************LED ON/OFF on desired pin*******************-----------------------------------------------------------------------
 
-#pragma config FOSC = HS        // Oscillator Selection bits (HS oscillator)
+#pragma config FOSC = HS        // Oscillator Selection bits (HS oscillator) - external high-speed crystal oscillator (typically >4 MHz, often up to 20 MHz or more)
 #pragma config WDTE = ON        // Watchdog Timer Enable bit (WDT enabled)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config BOREN = ON       // Brown-out Reset Enable bit (BOR enabled)
@@ -27,7 +27,7 @@ void main(void) {
 
 
 
---------------------****LED PATTERN***-----------
+--------------------**************************LED PATTERN*******************------------------------------------------------------------------------------------
 
 #pragma config FOSC = HS        // Oscillator Selection bits (HS oscillator)
 #pragma config WDTE = ON        // Watchdog Timer Enable bit (WDT enabled)
