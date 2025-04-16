@@ -1,4 +1,5 @@
 # PIC16F877A
+TO FAMILIARIZE PIC16F877A
 
 * code - MPLABPX IDE
 * simulation - proteus 8 professional
