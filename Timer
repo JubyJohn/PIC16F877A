@@ -119,12 +119,7 @@ void __interrupt() ISR(void)
 --------*********TIMEER1 - compare mode =output****-----------
 refer from: https://deepbluembedded.com/ccp-modules-capture-compare-pwm/
 
-/*
- * File:   newmain.c
- * Author: JUBY JOHN
- *
- * Created on 11 April, 2025, 2:41 PM
- */
+
 // CONFIG
 #pragma config FOSC = HS        // Oscillator Selection bits (HS oscillator)
 #pragma config WDTE = ON        // Watchdog Timer Enable bit (WDT enabled)
