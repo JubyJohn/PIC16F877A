@@ -64,6 +64,11 @@ TIMER2	|8-bit	|RegValue = 256-((Delay * Fosc)/(Prescalar*4))|
 |PWM1|	PC.2|	CCP1CON|	CCPR1L|	PR2|
 |PWM2|	PC.1|	CCP2CON|	CCPR2L|	PR2|
 
+-> for setting PWM signal at 2Khz
+* PWMperiod = 1/2kHz
+* PWMperiod = (PR2 + 1) x 4 x Tosc x TMR2PrescalerValue
+* Tosc = 1/Fosc:: Fosc = 16Mhz 
+
 
 ##### INTERRUPTS
 
