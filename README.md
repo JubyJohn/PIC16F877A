@@ -84,3 +84,20 @@ TIMER2	|8-bit	|RegValue = 256-((Delay * Fosc)/(Prescalar*4))|
 |INTCON|	PIE1|	PIE2|	PIR1|	PIR2|
 |:---:|:---:|:--:|:--:|:---:|
 
+##### SPI - Serial Peripheral Interface
+<br> Synchronous serial communication protocol used for high-speed data transfer.
+
+Key Features:
+* Master-slave architecture.
+* Uses four lines:
+  <br> MISO -Master input slave output (Dout From Slave).
+  <br> MOSI
+  <br> SCK 
+  <br> SS
+* Full-duplex communication.
+* Speed Up to tens of Mbps.
+
+<br> Applications: Flash memory, sensors, SD cards, displays.
+
+
+
