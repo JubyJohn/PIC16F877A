@@ -1,18 +1,19 @@
 # PIC16F877A
-TO FAMILIARIZE PIC16F877A
+## GENERAL
+### 1) TO FAMILIARIZE PIC16F877A
 
 * code - MPLABPX IDE
 * simulation - proteus 8 professional
 * Datasheet - https://ww1.microchip.com/downloads/en/devicedoc/39582b.pdf
 
-#### MPLAB Setting
+### 2) MPLAB Setting
  * Download and install
  * Step 1 : Open MPLAB -> File -> New Project ->(New Tab opens) Device : PIC16F877A -> TOOL : Simulator -> FINISH
  * Step 2 :(Side bar click on project name) -> source file(RIGHT CLICK) -> NEW -> main.c
  * Step 3 : (Menu bar) Production -> set configuration bits -> change FOSC's EXTRC to HS -> generate configuration bits (copy config definition to main.c file) external high-speed crystal oscillator (typically >4 MHz, often up to 20 MHz or more)
  * Step 4 : add "#define _XTAL_FREQ 16000000" after headerfile
 
-#### Proteus Setting
+### 3) Proteus Setting
  * Run Setup and install
  * Step 1 : Open Proteus ->  New Project ->File Path setting -> (next) -> FINISH
  * Step 2 : Click on P icon -> No library found
