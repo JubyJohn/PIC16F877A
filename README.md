@@ -21,8 +21,9 @@
  * Step 4 : Right click on Proteus Icon -> Properties ->Compatibility -> Run this program as an administrator(tick mark)
  * Step 5 : Close Proteus, then refresh and open again
 
-### 3) #pragma -> * is a compiler directive in C and C-like languages (including MPLAB XC8 for PIC microcontrollers).
-enps;* Special instruction sent to the compiler, not part of the C language itself. It's used to control compiler behavior — things like memory configuration, interrupt vector definitions, or special optimizations.
+### 3) #pragma 
+* is a compiler directive in C and C-like languages (including MPLAB XC8 for PIC microcontrollers).
+* Special instruction sent to the compiler, not part of the C language itself. It's used to control compiler behavior — things like memory configuration, interrupt vector definitions, or special optimizations.
 
 
 ## TOPICS
