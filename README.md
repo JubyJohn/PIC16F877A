@@ -35,6 +35,17 @@
    * Button pressed → RB0 is HIGH (connected to Vcc).
    * Button not pressed → RB0 is LOW (via pull-down).
 
+GND
+ |
+[10kΩ]       ← Pull-down resistor
+ |
+ +-------> RB0 (PORTB.0)
+ |
+(Button)
+ |
++5V
+
+
 
 
 #### MOTOR DIRECTION
