@@ -43,13 +43,7 @@
 <br>|
 <br>(Button)
 <br>|
-+5V
-<br>GND ---/\/\/\---+--- Input Pin
-<br>                |
-<br>              (Switch)
-<br>                |
-  <br>             +5V
-
+<br>+5V
 
 #### MOTOR DIRECTION
 
