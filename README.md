@@ -18,7 +18,8 @@ TO FAMILIARIZE PIC16F877A
 |STOP|	0|0|	0	|0	|Both Stops|
 |FORWARD|	1|	0|	1|	0	|Both Forward Moves|
 |BACKWARD|	0|	1|	0|	1	|Both Backward Moves|
-|LEFT|	8-bit|	T2CON	|TMR2|	0.2usec	|819usec|
+|LEFT|	0|	1	|1|	0	|Left motor backward, Right motor forward|
+|RIGHT|	1|	0	|0|	1	|Right motor backward, Left motor forward|
    
 #### TIMERS & INTERRUPTS
 
