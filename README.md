@@ -10,6 +10,15 @@ TO FAMILIARIZE PIC16F877A
  * Step 1 : Open MPLAB -> File -> New Project ->(New Tab opens) Device : PIC16F877A -> TOOL : Simulator -> FINISH
  * Step 2 :(Side bar click on project name) -> source file(RIGHT CLICK) -> NEW -> main.c
  * Step 3 : (Menu bar) Production -> set configuration bits -> change FOSC's EXTRC to HS -> generate configuration bits (copy config definition to main.c file) external high-speed crystal oscillator (typically >4 MHz, often up to 20 MHz or more)
+
+#### MOTOR DIRECTION
+
+|DIRECTION	|IN1	|IN2	|IN3|	IN4|	MOVEMENT|
+|:---:|:--:|:---:|:--:|:--:|:---:|
+|STOP|	0|0|	0	|0	|Both Stops|
+|FORWARD|	1|	0|	1|	0	|Both Forward Moves|
+|BACKWARD|	0|	1|	0|	1	|Both Backward Moves|
+|LEFT|	8-bit|	T2CON	|TMR2|	0.2usec	|819usec|
    
 #### TIMERS & INTERRUPTS
 
