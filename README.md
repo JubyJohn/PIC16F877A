@@ -51,9 +51,12 @@
 
 |Before PORTC |After PORTC |= 0x01; |
 |:---:|:--:|
-| 00000000 | 00000001 |
-| 00000100 | 00000101 |
-| 11111110 | 11111111 |
+|00000000 |00000001 |
+|00000100 |00000101 |
+|11111110 |11111111 |
+
+* PORTB &= 0x01;
+    * You’re attempting to clear RB1 to RB7 — this writes zero to those output pins
 
 
 #### MOTOR DIRECTION
