@@ -19,7 +19,7 @@ void main(void)
     TRISB = 0xff; // data direction register
     while(1)
     {
-        PORTB &= 0X01;
+        PORTB &= 0X01; //All bits except bit 0 will be cleared, You’re attempting to clear RB1 to RB7 — this writes zero to those output pins
     }
     return;
 }
@@ -48,7 +48,7 @@ void main(void)
         
        if(PORTB & 0x01)
         {
-            PORTC |= 0X01;
+            PORTC |= 0X01; //sets RC0 of PORTC to HIGH while leaving the other bits unchanged.
         }
         else
         {
