@@ -28,6 +28,15 @@
 
 ## TOPICS
 
+### 1) SWITCH
+
+* In Proteus, type button -> SPST Push Button
+* For circuit,
+   * Button pressed → RB0 is HIGH (connected to Vcc).
+   * Button not pressed → RB0 is LOW (via pull-down).
+
+
+
 #### MOTOR DIRECTION
 
 |DIRECTION	|IN1	|IN2	|IN3|	IN4|	MOVEMENT|
