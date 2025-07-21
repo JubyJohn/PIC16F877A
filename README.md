@@ -45,6 +45,16 @@
 <br>|
 <br>+5V
 
+#### Code Explanation
+* PORTC |= 0x01;
+       * This line sets bit 0 (RC0) of PORTC to HIGH while leaving the other bits unchanged.
+ Before PORTC | After PORTC |= 0x01; |
+|*--------------*|*-------------------------*|
+| 00000000 | 00000001 |
+| 00000100 | 00000101 |
+| 11111110 | 11111111 |
+
+
 #### MOTOR DIRECTION
 
 |DIRECTION	|IN1	|IN2	|IN3|	IN4|	MOVEMENT|
