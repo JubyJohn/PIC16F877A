@@ -37,16 +37,13 @@
 
 <br>GND
 <br>|
-<br>[10kΩ]       ← #### Pull-down resistor
+<br>[10kΩ]       ←  Pull-down resistor
 <br>|
 <br>+-------> RB0 (PORTB.0)
 <br>|
 <br>(Button)
 <br>|
 <br>+5V
-
-
-
 
 #### MOTOR DIRECTION
 
