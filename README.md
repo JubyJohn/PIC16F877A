@@ -68,6 +68,14 @@
 |BACKWARD|	0|	1|	0|	1	|Both Backward Moves|
 |LEFT|	0|	1	|1|	0	|Left motor backward, Right motor forward|
 |RIGHT|	1|	0	|0|	1	|Right motor backward, Left motor forward|
+
+### 2) 7 SEGMENT DISPLAY
+
+* To display all numbers and to properly see them all
+     * Add a 220 - 470 ohm resistor between each PORT pin and its respective segment pin. Like this,
+
+<img width="684" height="519" alt="Screenshot 2025-07-23 105246" src="https://github.com/user-attachments/assets/1d5c83c3-1756-4e32-9892-9ccf736d1837" />
+
    
 #### TIMERS & INTERRUPTS
 
