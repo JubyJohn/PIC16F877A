@@ -46,10 +46,10 @@
 <br>+5V
 
 #### Code Explanation
-* PORTC |= 0x01;
-       * This line sets bit 0 (RC0) of PORTC to HIGH while leaving the other bits unchanged.
+* PORTC |= 0x01;(consider this as x)
+     * This line sets bit 0 (RC0) of PORTC to HIGH while leaving the other bits unchanged.
 
-|Before PORTC |After PORTC |= 0x01; |
+|Before PORTC |After x |
 |:---:|:--:|
 |00000000 |00000001 |
 |00000100 |00000101 |
