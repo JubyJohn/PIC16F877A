@@ -45,6 +45,8 @@
 <br>|
 <br>+5V
 
+
+
 #### Code Explanation
 * PORTC |= 0x01;(consider this as x)
      * This line sets bit 0 (RC0) of PORTC to HIGH while leaving the other bits unchanged.
@@ -59,6 +61,8 @@
     * You’re attempting to clear RB1 to RB7 — this writes zero to those output pins
 
 
+
+
 #### MOTOR DIRECTION
 
 |DIRECTION	|IN1	|IN2	|IN3|	IN4|	MOVEMENT|
@@ -71,12 +75,18 @@
 
 Refer: https://randomnerdtutorials.com/esp32-dc-motor-l298n-motor-driver-control-speed-direction/
 
+
+
+
 ### 2) 7 SEGMENT DISPLAY
 
 * To display all numbers and to properly see them all
      * Add a 220 - 470 ohm resistor between each PORT pin and its respective segment pin. Like this,
 
 <img width="684" height="519" alt="Screenshot 2025-07-23 105246" src="https://github.com/user-attachments/assets/1d5c83c3-1756-4e32-9892-9ccf736d1837" />
+
+
+
 
    
 #### TIMERS & INTERRUPTS
