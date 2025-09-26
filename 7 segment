@@ -91,7 +91,12 @@ void main(void)
     
     int i=0;
     unsigned char a[10]= {0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};
-    
+    //* unsigned char uses -> 1 byte (8 bits).
+* int typically uses 2 or 4 bytes depending on the system (often 16-bit or 32-bit).
+* You're storing values like 0x3f, 0x06, etc., which all fit in 8 bits.
+* Using int would waste memory unnecessarily.
+
+✅ Conclusion: unsigned char is more memory-efficient for 8-bit data.
     
     TRISC = 0x00;
     while(1)
