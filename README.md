@@ -98,6 +98,7 @@ Refer: https://randomnerdtutorials.com/esp32-dc-motor-l298n-motor-driver-control
 |TIMER2|	8-bit|	T2CON	|TMR2|	0.2usec	|819usec|
 
 
+
 ##### TIMER 0 
 
 Time to increment the Timer count by one(timer tick):
