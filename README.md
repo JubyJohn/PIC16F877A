@@ -85,6 +85,24 @@ Refer: https://randomnerdtutorials.com/esp32-dc-motor-l298n-motor-driver-control
 
 <img width="684" height="519" alt="Screenshot 2025-07-23 105246" src="https://github.com/user-attachments/assets/1d5c83c3-1756-4e32-9892-9ccf736d1837" />
 
+* unsigned char
+     * unsigned char uses -> 1 byte (8 bits).
+     * int typically uses 2 or 4 bytes depending on the system (often 16-bit or 32-bit).
+     * You're storing values like 0x3f, 0x06, etc., which all fit in 8 bits.
+     * Using int would waste memory unnecessarily.
+
+| Data Type               | Min Value      | Max Value      |
+| ----------------------- | -------------- | -------------- |
+| `signed char`           | -128           | +127           |
+| `unsigned char`         | 0              | 255            |
+| `signed int` (16-bit)   | -32,768        | +32,767        |
+| `unsigned int` (16-bit) | 0              | 65,535         |
+| `signed int` (32-bit)   | -2,147,483,648 | +2,147,483,647 |
+| `unsigned int` (32-bit) | 0              | 4,294,967,295  |
+
+
+✅ Conclusion: unsigned char is more memory-efficient for 8-bit data.
+
 
 
 
