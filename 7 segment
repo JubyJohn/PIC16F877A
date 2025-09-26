@@ -96,6 +96,16 @@ void main(void)
 * You're storing values like 0x3f, 0x06, etc., which all fit in 8 bits.
 * Using int would waste memory unnecessarily.
 
+| Data Type               | Min Value      | Max Value      |
+| ----------------------- | -------------- | -------------- |
+| `signed char`           | -128           | +127           |
+| `unsigned char`         | 0              | 255            |
+| `signed int` (16-bit)   | -32,768        | +32,767        |
+| `unsigned int` (16-bit) | 0              | 65,535         |
+| `signed int` (32-bit)   | -2,147,483,648 | +2,147,483,647 |
+| `unsigned int` (32-bit) | 0              | 4,294,967,295  |
+
+
 ✅ Conclusion: unsigned char is more memory-efficient for 8-bit data.
     
     TRISC = 0x00;
