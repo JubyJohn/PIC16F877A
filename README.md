@@ -69,6 +69,8 @@
 |LEFT|	0|	1	|1|	0	|Left motor backward, Right motor forward|
 |RIGHT|	1|	0	|0|	1	|Right motor backward, Left motor forward|
 
+Refer: https://randomnerdtutorials.com/esp32-dc-motor-l298n-motor-driver-control-speed-direction/
+
 ### 2) 7 SEGMENT DISPLAY
 
 * To display all numbers and to properly see them all
