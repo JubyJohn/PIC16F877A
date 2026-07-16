@@ -80,21 +80,21 @@ void main(void)
     while(1)
     {
         
-        if(PORTD & 0x10) // 0001 0000
+        if(PORTD & 0x10) // 0001 0000 => checking
         {
-            PORTD = (PORTD & 0xF0)| 0X0A; // 0000 1010~ FORWARD
+            PORTD = (PORTD & 0xF0)| 0X0A; // 1010 ~ FORWARD
         }
-        else if(PORTD & 0x20) // 0010 0000
+        else if(PORTD & 0x20) // 0010 0000 => checking
         {
-             PORTD = (PORTD & 0xF0)|0X05;  // 0000 0101~BACKWARD
+             PORTD = (PORTD & 0xF0)|0X05;  //  0101 ~ BACKWARD
         }
-        else if(PORTD & 0x40)  // 0100 0000
+        else if(PORTD & 0x40)  // 0100 0000 => checking
         {
-             PORTD = (PORTD & 0xF0)| 0X08; //0000 1000~LEFT
+             PORTD = (PORTD & 0xF0)| 0X08; // 1000 ~ LEFT
         }
-        else if(PORTD & 0x80) // 1000 0000
+        else if(PORTD & 0x80) // 1000 0000 => checking
         {
-             PORTD = (PORTD & 0xF0)| 0X02; // 0000 0010~RIGHT
+             PORTD = (PORTD & 0xF0)| 0X02; // 0010 ~ RIGHT
         }
     }
 
