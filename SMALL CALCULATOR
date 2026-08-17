@@ -1,0 +1,286 @@
+
+
+// CONFIG
+#pragma config FOSC = HS        // Oscillator Selection bits (HS oscillator)
+#pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled)
+#pragma config PWRTE = ON       // Power-up Timer Enable bit (PWRT enabled)
+#pragma config BOREN = ON       // Brown-out Reset Enable bit (BOR enabled)
+#pragma config LVP = OFF        // Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit (RB3 is digital I/O, HV on MCLR must be used for programming)
+#pragma config CPD = OFF        // Data EEPROM Memory Code Protection bit (Data EEPROM code protection off)
+#pragma config WRT = OFF        // Flash Program Memory Write Enable bits (Write protection off; all program memory may be written to by EECON control)
+#pragma config CP = OFF         // Flash Program Memory Code Protection bit (Code protection off)
+
+
+
+#include <xc.h>
+#define _XTAL_FREQ 16000000
+
+
+int key();
+void lcd();
+void cmd(int);
+void data1(char);
+void delay();
+void num(int);
+void digit(int);
+
+
+
+void main(void) {
+    
+    int s,m,n=0,q,y;
+    TRISD = 0XF0;
+    PORTC = 0X00;
+    TRISC = 0X00;
+    PORTB = 0X00;
+    TRISB = 0X00;
+    
+    lcd();
+    
+    while(1){
+        
+        s = key();
+        if (s < 16)
+        {
+            num(s);
+        }
+        if (s < 10)
+        {
+            n = n * 10 + s;
+        }
+        else if(s >= 12 && s <= 15)
+        {
+            m = n;
+            n = 0;
+            q = s;
+        }
+        else if(s == 10)
+        {
+            m = 0;
+            n = 0;
+            q = s;
+        }
+        else if(s == 11)
+        {
+            switch(q)
+            {
+                case 15:
+                    y = m + n;
+                    digit(y);
+                    break;
+                case 14: 
+                    y = m - n;
+                    digit(y);
+                    break;
+                case 13: 
+                    y = m * n;
+                    digit(y);
+                    break;
+                case 12:
+                    if(n != 0)
+                    {
+                        y = m / n;
+                        digit(y);
+                    }
+                    else
+                    {
+                        data1('E');
+                    }
+                    break;
+            }
+        }
+    }
+    
+}
+
+void digit( int b)
+{
+    int a[10],r,i =0;
+    while(b>0)
+    {
+        r = b % 10;
+        a[i] = r;
+        b = b / 10;
+        i++;
+    }
+    
+    for(i=i-1;i>=0;i--)
+    {
+        num(a[i]);
+    }
+}
+
+
+void lcd(){
+    cmd(0x38);
+    cmd(0x0e);
+    cmd(0x01);
+    cmd(0x06);
+    cmd(0x80);
+}
+
+
+void cmd (int a){
+    PORTB = a;
+    RC0 = 0;
+    RC1 = 1;
+    delay();
+    RC1 = 0;
+}
+
+
+void data1(char x){
+    PORTB = x;
+    RC0 = 1;
+    RC1 = 1;
+    delay();
+    RC1 = 0;
+}
+
+void num(int x){
+    switch(x){
+        case 0: data1('0');
+        break;
+        case 1: data1('1');
+        break;
+        case 2: data1('2');
+        break;
+        case 3: data1('3');
+        break;
+        case 4: data1('4');
+        break;
+        case 5: data1('5');
+        break;
+        case 6: data1('6');
+        break;
+        case 7: data1('7');
+        break;
+        case 8: data1('8');
+        break;
+        case 9: data1('9');
+        break;
+        case 10: lcd();
+        break;
+        case 11: data1('=');
+        break;
+        case 12: data1('/');
+        break;
+        case 13: data1('*');
+        break;
+        case 14: data1('-');
+        break;
+        case 15: data1('+');
+        break;
+    }
+}
+
+
+int key()
+{
+    int x = 16;
+    
+    /*****1st ROW*****/
+    
+    RD0 = 1;
+    RD1 = 0;
+    RD2 = 0;
+    RD3 = 0;
+    
+    while(RD4 == 1)
+    {
+        x = 7;
+    }
+    while(RD5 == 1)
+    {
+        x = 8;
+    }
+    while(RD6 == 1)
+    {
+        x = 9;
+    }  
+    while(RD7 == 1)
+    {
+        x = 12;
+    }  
+    
+     /*****2nd ROW*****/
+    
+    RD0 = 0;
+    RD1 = 1;
+    RD2 = 0;
+    RD3 = 0;
+    
+    while(RD4 == 1)
+    {
+        x = 4;
+    }
+    while(RD5 == 1)
+    {
+        x = 5;
+    }
+    while(RD6 == 1)
+    {
+        x = 6;
+    }  
+    while(RD7 == 1)
+    {
+        x = 13;
+    }
+    
+     /*****3rd ROW*****/
+    
+    RD0 = 0;
+    RD1 = 0;
+    RD2 = 1;
+    RD3 = 0;
+    
+    while(RD4 == 1)
+    {
+        x = 1;
+    }
+    while(RD5 == 1)
+    {
+        x = 2;
+    }
+    while(RD6 == 1)
+    {
+        x = 3;
+    }  
+    while(RD7 == 1)
+    {
+        x = 14;
+    }
+    
+    /*****4th ROW*****/
+    
+    RD0 = 0;
+    RD1 = 0;
+    RD2 = 0;
+    RD3 = 1;
+    
+    while(RD4 == 1)
+    {
+        x = 10;
+    }
+    while(RD5 == 1)
+    {
+        x = 0;
+    }
+    while(RD6 == 1)
+    {
+        x = 11;
+    }  
+    while(RD7 == 1)
+    {
+        x = 15;
+    }
+    
+    return x;
+}
+
+void delay()
+{
+    int i,j;
+    for(i=0;i<100;i++)
+        for(j=0;j<100;j++);
+}
