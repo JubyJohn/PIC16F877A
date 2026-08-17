@@ -200,4 +200,10 @@ Key Features:
 <br> Applications: Flash memory, sensors, SD cards, displays.
 
 
+#### SMALL CALCULATOR
+
+<img width="1089" height="764" alt="Screenshot 2026-08-17 200649" src="https://github.com/user-attachments/assets/f07b2c12-e227-44dc-b428-93cfaa17dd5e" />
+
+
+
 
