@@ -29,6 +29,7 @@ void digit(int);
 void main(void) {
     
     int s,m,n=0,q,y;
+
     TRISD = 0XF0;
     PORTC = 0X00;
     TRISC = 0X00;
@@ -41,25 +42,25 @@ void main(void) {
         
         s = key();
         if (s < 16)
-        {
-            num(s);
-        }
+            {
+                num(s);
+            }
         if (s < 10)
-        {
-            n = n * 10 + s;
-        }
+            {
+                n = n * 10 + s;
+            }
         else if(s >= 12 && s <= 15)
-        {
-            m = n;
-            n = 0;
-            q = s;
-        }
+            {
+                m = n;
+                n = 0;
+                q = s;
+            }
         else if(s == 10)
-        {
-            m = 0;
-            n = 0;
-            q = s;
-        }
+            {
+                m = 0;
+                n = 0;
+                q = s;
+            }
         else if(s == 11)
         {
             switch(q)
@@ -97,30 +98,32 @@ void digit( int b)
 {
     int a[10],r,i =0;
     while(b>0)
-    {
-        r = b % 10;
-        a[i] = r;
-        b = b / 10;
-        i++;
-    }
-    
+        {
+            r = b % 10;
+            a[i] = r;
+            b = b / 10;
+            i++;
+        }
+        
     for(i=i-1;i>=0;i--)
-    {
-        num(a[i]);
-    }
+        {
+            num(a[i]);
+        }
 }
 
 
-void lcd(){
-    cmd(0x38);
-    cmd(0x0e);
-    cmd(0x01);
-    cmd(0x06);
-    cmd(0x80);
+void lcd()
+{
+    cmd(0x38);   // 8-bit, 2-line
+    cmd(0x0E);   // Display ON, cursor ON
+    cmd(0x01);   // Clear display
+    cmd(0x06);   // Cursor increment
+    cmd(0x80);   // First line
 }
 
 
-void cmd (int a){
+void cmd (int a)
+{
     PORTB = a;
     RC0 = 0;
     RC1 = 1;
@@ -129,7 +132,8 @@ void cmd (int a){
 }
 
 
-void data1(char x){
+void data1(char x)
+{
     PORTB = x;
     RC0 = 1;
     RC1 = 1;
